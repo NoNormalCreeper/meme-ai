@@ -1,0 +1,5 @@
+{
+  "name": "Meme GenAI Classifier",
+  "description": "An AI-powered application that classifies text into popular Chinese internet slang/memes.",
+  "requestFramePermissions": []
+}

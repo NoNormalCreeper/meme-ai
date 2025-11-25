@@ -1,0 +1,11 @@
+{
+  "name": "meme-genai-classifier",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "pnpm --dir next-app dev",
+    "build": "pnpm --dir next-app build",
+    "start": "pnpm --dir next-app start",
+    "lint": "pnpm --dir next-app lint"
+  }
+}
