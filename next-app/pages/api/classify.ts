@@ -173,6 +173,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(502).json({ error: "Invalid response from LLM" });
     }
 
+    console.log(`[INFO] User content: ${parsed.data.content}\n[INFO] LLM output: ${text}\n[INFO] Parsed label: ${label}, roast: ${roast}`);
+
     return res.status(200).json({
       result: label,
       roast,
