@@ -1,6 +1,6 @@
 # Meme GenAI Classifier
 
-![GHBanner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
+![来源](description.jpeg)
 
 一个用于快速给中文文本贴梗词标签的全栈 Next.js 应用。UI 与 `/api/classify` 接口运行在同一个 Next.js 进程中，所有与 DeepSeek/OpenAI 兼容接口的通信都发生在服务器端，避免在浏览器中暴露密钥。
 
