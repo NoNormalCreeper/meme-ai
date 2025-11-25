@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script";
 import "./globals.css";
 
@@ -17,7 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
       </head>
-      <body className="bg-gray-50 text-slate-900 antialiased font-sans">{children}</body>
+      <body className="bg-gray-50 text-slate-900 antialiased font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
