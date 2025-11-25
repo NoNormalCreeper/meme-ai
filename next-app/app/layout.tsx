@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "梗词判定机 | MemeAI",
+  title: "何意味？ | MemeAI",
   description: "使用 Next.js + DeepSeek 的中文梗词判定器",
 };
 
