@@ -7,6 +7,7 @@ import type { BackendResponse, MemeResult } from '../types';
 
 export default function HomePage() {
   const [result, setResult] = useState<MemeResult | null>(null);
+  const [roast, setRoast] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,11 +20,13 @@ export default function HomePage() {
 
     if (!content) {
       setError('Content is required');
+      setRoast(null);
       return;
     }
 
     setIsLoading(true);
     setError(null);
+    setRoast(null);
 
     try {
       const response = await fetch('/api/classify', {
@@ -44,11 +47,13 @@ export default function HomePage() {
       }
 
       setResult(payload.result ?? null);
+      setRoast(payload.roast ?? null);
       // formElement.reset();
     } catch (fetchError) {
       const message = fetchError instanceof Error ? fetchError.message : 'Unexpected error';
       setError(message);
       setResult(null);
+      setRoast(null);
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +81,7 @@ export default function HomePage() {
 
       <main className="w-full max-w-2xl bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 p-6 sm:p-8 space-y-8">
         <section>
-          <ResultDisplay result={result} isLoading={isLoading} />
+          <ResultDisplay result={result} roast={roast} isLoading={isLoading} />
         </section>
 
         <section className="space-y-4">

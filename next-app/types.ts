@@ -10,6 +10,7 @@ export type MemeResult =
 
 export interface AnalysisResponse {
   result: MemeResult;
+  roast: string;
   timestamp?: string;
 }
 

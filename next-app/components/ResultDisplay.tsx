@@ -2,10 +2,11 @@ import { MemeResult } from "../types";
 
 interface ResultDisplayProps {
   result: MemeResult | null;
+  roast: string | null;
   isLoading: boolean;
 }
 
-const ResultDisplay = ({ result, isLoading }: ResultDisplayProps) => {
+const ResultDisplay = ({ result, roast, isLoading }: ResultDisplayProps) => {
   const getStyleForResult = (res: string) => {
     switch (res) {
       case "🍭":
@@ -59,6 +60,11 @@ const ResultDisplay = ({ result, isLoading }: ResultDisplayProps) => {
         <h1 className="text-5xl sm:text-7xl font-bold tracking-tight drop-shadow-sm break-words leading-tight">
           {result}
         </h1>
+        {roast && (
+          <p className="mt-4 text-lg font-semibold opacity-90 break-words">
+            {roast}
+          </p>
+        )}
       </div>
     </div>
   );

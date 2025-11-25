@@ -95,7 +95,7 @@ Assistant: 何意味
 const client = new OpenAI({
   baseURL: BACKEND_CONFIG.baseURL,
   apiKey: BACKEND_CONFIG.apiKey,
-  dangerouslyAllowBrowser: true // Necessary only for this client-side demo environment
+  dangerouslyAllowBrowser: false // Necessary only for this client-side demo environment
 });
 
 /**
