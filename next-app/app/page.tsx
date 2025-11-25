@@ -44,7 +44,7 @@ export default function HomePage() {
       }
 
       setResult(payload.result ?? null);
-      formElement.reset();
+      // formElement.reset();
     } catch (fetchError) {
       const message = fetchError instanceof Error ? fetchError.message : 'Unexpected error';
       setError(message);
